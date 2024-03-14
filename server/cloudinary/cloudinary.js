@@ -1,10 +1,11 @@
 const cloudinary = require('cloudinary')
           
-cloudinary.config({ 
-  cloud_name: 'diu4lrnfr', 
-  api_key: '457147675998176', 
-  api_secret: '35lktV1dBhnl4p_Nbg2DQ7g2q1c' 
-});
+
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET
+})
 
 uploadToCloudinary = (path, folder) => {
     return cloudinary.v2.uploader.upload(path, {
