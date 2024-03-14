@@ -1,0 +1,26 @@
+<div class="author">
+    <h1 class="author__heading">Hi, I'm LEGION.</h1>
+    <p class="author__body">A <span>Nihilistic</span> side character.</p>
+</div>
+
+<img src="images/420ae9d1-0990-4078-ac95-34fffc641b19.png" alt="Pokemon" class="hero-img" height="500" width="500">
+
+<section class="article">
+    <h2 class="article__heading"><i class="fa-solid fa-envelope-open"></i> Latest posts</h2>
+    <ul class="article-ul">
+        <% data.forEach(post => { %>
+        <li>
+            <a href="/post/<%= post._id %>">
+                <span><i class="fa-solid fa-up-right-from-square"></i> <%= post.title %></span>
+                    <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+            </a>
+        </li>
+        <% }) %>
+    </ul>
+    <% if (nextPage!== null) { %>
+        <a href="?page=<%= nextPage %>" class="pagination"> <i class="fa-solid fa-backward"></i> View older posts</a>
+     
+    <% } %>
+
+    
+</section>
